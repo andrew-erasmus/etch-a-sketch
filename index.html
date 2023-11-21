@@ -23,11 +23,18 @@
                 <input type="color" value="#000000" id="color-picker">
                 <label for="color-picker"></label>
             </div>
-            
+
             <button class="color-btn" onclick="useColor()">Color</button>
             <button class="eraser-btn" onclick="eraseButton()">Eraser</button>
             <button class="clear-btn" onclick="clearCanvas()">Clear</button>
-        
+
+            
+            <div class="slide-container">
+                <p id="dimensions">16 x 16</p>  
+                <input type="range" min="1" max="100" value="16" class="slider" id="pixel-dimensions">
+            </div>
+
+
         </div>
 
         <div style="height: 500px; width: 500px;" id="sketch-container">
