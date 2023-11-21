@@ -9,6 +9,8 @@ var numericWidth = parseFloat(width);
 let squareH = numericHeight / 16;
 let squareW = numericWidth / 16;
 
+let currentColor = 'black';
+
 loadCanvas();
 
 let mouseDown = false;
@@ -24,27 +26,29 @@ function loadCanvas() {
         square.style.height = squareH + 'px';
 
         container.appendChild(square);
-        square.addEventListener('dragstart', function(event) {
+        square.addEventListener('dragstart', function (event) {
             // Prevent the default drag-and-drop behavior
             event.preventDefault();
         });
-        square.addEventListener('mousedown', changeColor);
-        square.addEventListener('mouseover', changeColor);
-        
+        square.addEventListener('mousedown', drawInColor);
+        square.addEventListener('mouseover', drawInColor);
+
 
 
     }
 }
 
 //Changes their color when dragged over
-function changeColor(e) {
+function drawInColor(e) {
 
-    if (e.type === 'mouseover' && mouseDown === true){
-    console.log(mouseDown);
-    e.target.style.backgroundColor = "black";
+    if (e.type === 'mouseover' && mouseDown === true) {
+        e.target.style.backgroundColor = currentColor;
     }
 }
 
+function eraseButton() {
+    currentColor = 'white';
+}
 
 // Clears the canvas when button clicked
 function clearCanvas() {
