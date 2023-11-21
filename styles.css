@@ -27,7 +27,7 @@ h1{
     flex: 1;
     align-items: center;
     justify-content: center;
-
+    gap: 30px;
 }
 
 #sketch-container{
@@ -36,15 +36,39 @@ h1{
     color: #001861;
     display: flex;
     flex-wrap: wrap;
-    border: solid black 1px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .square{
     margin:0;
 }
 
-.color-in{
-    background-color: black;
+.controls{
+    height: 500px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.clear-btn{
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #001861;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 5px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.clear-btn:hover{
+    transform: scale(1.2);
+    transition: 300ms;
+}
+
+.clear-btn:not(:hover){
+    transform: scale(1);
+    transition: 300ms;
 }
 .footer{
     max-height: 50px;
