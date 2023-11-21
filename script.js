@@ -10,6 +10,10 @@ let squareH = numericHeight / 16;
 let squareW = numericWidth / 16;
 
 let currentColor = 'black';
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener("input", watchColorPicker, false);
+colorPicker.addEventListener("change", watchColorPicker, false);
+
 
 loadCanvas();
 
@@ -38,6 +42,11 @@ function loadCanvas() {
     }
 }
 
+//Color picker changer
+function watchColorPicker(e) {
+    currentColor = e.target.value;
+}
+
 //Changes their color when dragged over
 function drawInColor(e) {
 
@@ -46,6 +55,12 @@ function drawInColor(e) {
     }
 }
 
+//Eraser functionality
+function useColor() {
+    currentColor = colorPicker.value;
+}
+
+//Eraser functionality
 function eraseButton() {
     currentColor = 'white';
 }
